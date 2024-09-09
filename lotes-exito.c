@@ -234,14 +234,14 @@ int a;
 int a = 5;
 float val[];
 float values[3];
-func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
 int index[2] = {};
 int indexes[3] = {5,7};
-+(!b)/b-"as"&&"k" <= 3421.5648;
 int indexes[3] = {5,7,321};
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 b = b*8+factorial(4);
++(!b)/b-"as"&&"k" <= 3421.5648;
 }
 
 void func(){
@@ -249,13 +249,13 @@ int a;
 int a = 5;
 float val[];
 float values[3];
-func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
 int index[2] = {};
 int indexes[3] = {5,7};
-+(!b)/b-"as"&&"k" <= 3421.5648;
 int indexes[3] = {5,7,321};
++(!b)/b-"as"&&"k" <= 3421.5648;
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 b = b*8+factorial(4);
 }
 
@@ -366,9 +366,9 @@ b = !fisLogic(-1,+4) || func();
 return b;
 }
 else{
-func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 b = b*8+factorial(4);
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 return a;
 }
 }
