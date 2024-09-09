@@ -1,104 +1,101 @@
-my_variable; // falta tipo
+my_variable;
 
-int; // falta identificador
+int;
 
-int a // falta ;
+int a
 
-float y 2.8 ; // falta =
+float y 2.8 ;
 
-float y = ; // falta constante
+float y = ;
 
-int i = 3 //falta ;
+int i = 3
 
-char arr]; // falta [
+char arr];
 
-char arr[;// falta ]
+char arr[;
 
-float values []{}; //falta =
+float values []{};
 
-float values []=}; //falta {
+float values []=};
 
-float values []={; //falta }
+float values []={;
 
-int indexes []={}; // falta constante para inicializar dentro de las llaves
+int indexes []={};
 
-int indexes []={4,}; // falta constante despues de la ,
+int indexes []={4,};
 
-int indexes []={,5}; // falta constante antes de la ,
+int indexes []={,5};
 
-void func){}; // falta (
+void func){};
 
-void func({}; // falta )
+void func({};
 
-void func(int){}; // falta identificador de param
+void func(int){};
 
-void func(param){}; // falta tipo de param
+void func(param){};
 
-void func(int &){}; // falta identificador de param
+void func(int &){};
 
-void func(&arr){}; // falta tipo de param
+void func(&arr){};
 
-void func(&arr){}; // falta tipo de param
+void func(&arr){};
 
-void func(int arr]){}; // falta ]
+void func(int arr]){};
 
-void func(int arr]){}; // falta [
+void func(int arr]){};
 
-void func(int &arr]){}; // falta [
+void func(int &arr]){};
 
-void func(int &arr[){}; // falta ]
+void func(int &arr[){};
 
-void func(int a, ){}; // se espera tipo despues de la coma
+void func(int a, ){};
 
-void func(int a, int){}; // se espera ident despues de tipo
+void func(int a, int){};
 
-void func(int a, b){}; // se espera tipo para el param
+void func(int a, b){};
 
-void func(int a, b, int c){}; // se espera tipo para el param
+void func(int a, b, int c){};
 
-void func(int &a, int b[, float c){}; // se espera ]
+void func(int &a, int b[, float c){};
 
-void func(int &a, int b], float c){}; // se espera [
+void func(int &a, int b], float c){};
 
-void func(int &a[, float b, float c]){}; // se espera [ y ver como se recupera para el 3er param
+void func(int &a[, float b, float c]){};
 
 float func() {
 int ;
 int b = 8;
-}// se espera ident
+}
 
 void func() {
 ;int b = 8;
-}// se espera tipo ?
+}
 
 
 void func() {
 b;
-}// aca no sabe si quiero probar declaracion sin tipo o es una expresion simple. No salta error sintactico aca
+}
 
 void func() {
 int b =;
-
 }
 
 void func() {
 int =5;
-
 }
 
 void func() {
 float a=1.0,b=2.4,c=6.3;
 {
 a=a+b;
-
-}// falta }
+}
 
 void func() {
 
 float a=1.0,b=2.4,c=6.3;
 a=a+b;
 }
-}// falta {
+}
 
 
 void func() {
@@ -106,72 +103,71 @@ void func() {
 float a=1.0,b=2.4,c=6.3;
 a=a+b;
 }
-}// falta {
-
+}
 
 void func() {
 int i = 0;
 while i<10)
 i=i+1;
-}// falta ( despues del while
+}
 
 void func() {
 int i = 0;
 while(i<10
 i=i+1;
-}// falta )
+}
 
 
 void func() {
 int i = 0;
 while(i<10
 i=i+1;
-}// falta ) sin cuerpo el while
+}
 
 void func() {
 int i = 0;
 while(1<10{
 i=i+1;
 }
-}// falta ) sin cuerpo el while
+}
 
 void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
-}// falta ) con cuerpo el while
+}
 
 void func() {
 int i = 0;
 while(i<10{
 i=i+1;
 }
-}// falta ) con cuerpo el while
+}
 
 void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
-}// falta ) con cuerpo el while
+}
 
 void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
-}// falta ) con cuerpo el while
+}
 
 void func() {
 int i = 0;
 if i<10) a=b;
-}// falta (
+}
 
 void func() {
 int i = 0;
 if (i<10 a=b;
-}// falta )
+}
 
 
 void func() {
@@ -179,7 +175,7 @@ int i = 0;
 if i<10){
 a=b;
 }
-}// falta (
+}
 
 
 void func() {
@@ -187,7 +183,7 @@ int i = 0;
 if i<10){
 a=b;
 }
-}// falta (
+}
 
 void func() {
 int i = 0;
@@ -195,7 +191,6 @@ if i<10){
 a=b;
 }
 }
-// falta (
 
 void fmain (){
 int a = 0;

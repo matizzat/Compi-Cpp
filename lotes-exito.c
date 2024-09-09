@@ -39,12 +39,11 @@ float values[];
 float values[3];
 float values[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
-int indexes[2] = {};
+int indexes[2] = {2};
 int indexes[3] = {5,7};
 int indexes[3] = {5,7,321};
 }
 
-//expresion -> expresion simple ... -> ... termino ... -> factor ... -> 
 void func(){
 a;
 }
@@ -70,7 +69,6 @@ void func(){
 "this is a string";
 }
 
-//expresion -> expresion simple ... -> ... [+|-] termino ... -> factor ....
 void func(){
 -a;
 }
@@ -96,7 +94,6 @@ void func(){
 +"this is a string";
 }
 
-//expresion -> expresion simple ... -> ... termino (+| - | ||) termino-> factor ....
 void func(){
 a+b;
 }
@@ -122,7 +119,6 @@ void func(){
 "this is a string" + !val;
 }
 
-//expresion -> expresion simple ... -> ... termino (+| - | ||) termino-> factor ....
 void func(){
 a+b;
 }
@@ -148,7 +144,6 @@ void func(){
 "this is a string" + !val;
 }
 
-//expresion -> expresion simple ... -> ... termino -> factor (* | / | &&) factor
 void func(){
 a*fmyNumber(a,b);
 }
@@ -174,7 +169,6 @@ void func(){
 "this is a string" / !val;
 }
 
-//expresion -> expresion simple ... -> [+/-] termino (+| - | ||) termino-> factor (* | / | &&) factor
 void func(){
 -a*5+fmyNumber(a,b);
 }
@@ -200,7 +194,6 @@ void func(){
 "this is a string"*4 - a/!(a-b);
 }
 
-//expresion -> expresion simple {= expresion simple | <relacion> expresion simple}
 void func(){
 -a*5+fmyNumber(a,b) = -a;
 }
@@ -228,7 +221,6 @@ b = b*8+factorial(4);
 
 }
 
-//proposicion compuesta -> { [lista de declaracion] [lista de proposiciones] }
 void func(){
 int a;
 int a = 5;
@@ -236,7 +228,7 @@ float val[];
 float values[3];
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
-int index[2] = {};
+int index[2] = {78};
 int indexes[3] = {5,7};
 int indexes[3] = {5,7,321};
 func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
@@ -251,7 +243,7 @@ float val[];
 float values[3];
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
-int index[2] = {};
+int index[2] = {54};
 int indexes[3] = {5,7};
 int indexes[3] = {5,7,321};
 +(!b)/b-"as"&&"k" <= 3421.5648;
