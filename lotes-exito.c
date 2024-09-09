@@ -273,10 +273,8 @@ float func(){
 int a = 5;
 int b = 2;
 int c;
-
-c=a+b;
-
 float z = fiDoACallHere(c, -a);
+c=a+b;
 
 {
 int a = b;
@@ -332,7 +330,7 @@ if(a<b) return 1;
 
 void func() {
 int a = 6, b = 7;
-if(a<b) return 1 else 0;
+if(a<b) return 1; else 0;
 }
 
 void func() {
