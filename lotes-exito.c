@@ -390,3 +390,47 @@ int func(){
 cout << 5 << 8+factorial(4);
 }
 
+int func(float a, float b){
+    int i = 0;
+
+    while(i<10){
+        if(a+b < func1(a,b))
+            return a;           
+        else {
+            a = 2*a;
+            b = 2*b;
+        }
+        i=i+1;
+    }
+
+    return a+b;
+}
+
+int func(float a, float b){
+    int i = 0;
+
+    if(a < b)
+        while(i < b)
+            a = 2*b;
+    else
+        while (i < a)
+            b = 2*a;
+    
+    return a+b;
+}
+
+
+int func(float a, float b){
+    int i = 0;
+
+    if(a < b){
+        while(i < b){
+            a = 2*b;
+        }
+    }
+    else{
+        while (i < a)
+            b = 2*a;
+    }
+    return a+b;
+}

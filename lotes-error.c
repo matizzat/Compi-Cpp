@@ -194,8 +194,10 @@ int i = 0;
 if i<10){
 a=b;
 }
-}// falta (
+}
+// falta (
 
-void main (){
-while(1<2) if ()
+void fmain (){
+	int a = 0;
+	while(1<2 if (!a)a=1;
 }
