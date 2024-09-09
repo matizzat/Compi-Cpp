@@ -26,74 +26,74 @@ int indexes []={4,}; // falta constante despues de la ,
 
 int indexes []={,5}; // falta constante antes de la ,
 
-void my_proc){}; // falta (
+void func){}; // falta (
 
-void my_proc({}; // falta )
+void func({}; // falta )
 
-void my_proc(int){}; // falta identificador de param
+void func(int){}; // falta identificador de param
 
-void my_proc(param){}; // falta tipo de param
+void func(param){}; // falta tipo de param
 
-void my_proc(int &){}; // falta identificador de param
+void func(int &){}; // falta identificador de param
 
-void my_proc(&arr){}; // falta tipo de param
+void func(&arr){}; // falta tipo de param
 
-void my_proc(&arr){}; // falta tipo de param
+void func(&arr){}; // falta tipo de param
 
-void my_proc(int arr]){}; // falta ]
+void func(int arr]){}; // falta ]
 
-void my_proc(int arr]){}; // falta [
+void func(int arr]){}; // falta [
 
-void my_proc(int &arr]){}; // falta [
+void func(int &arr]){}; // falta [
 
-void my_proc(int &arr[){}; // falta ]
+void func(int &arr[){}; // falta ]
 
-void my_proc(int a, ){}; // se espera tipo despues de la coma
+void func(int a, ){}; // se espera tipo despues de la coma
 
-void my_proc(int a, int){}; // se espera ident despues de tipo
+void func(int a, int){}; // se espera ident despues de tipo
 
-void my_proc(int a, b){}; // se espera tipo para el param
+void func(int a, b){}; // se espera tipo para el param
 
-void my_proc(int a, b, int c){}; // se espera tipo para el param
+void func(int a, b, int c){}; // se espera tipo para el param
 
-void my_proc(int &a, int b[, float c){}; // se espera ]
+void func(int &a, int b[, float c){}; // se espera ]
 
-void my_proc(int &a, int b], float c){}; // se espera [
+void func(int &a, int b], float c){}; // se espera [
 
-void my_proc(int &a[, float b, float c]){}; // se espera [ y ver como se recupera para el 3er param
+void func(int &a[, float b, float c]){}; // se espera [ y ver como se recupera para el 3er param
 
-float myFunc() {
+float func() {
 int ;
 int b = 8;
 }// se espera ident
 
-void myProc() {
+void func() {
 ;int b = 8;
 }// se espera tipo ?
 
 
-void myProc() {
+void func() {
 b;
 }// aca no sabe si quiero probar declaracion sin tipo o es una expresion simple. No salta error sintactico aca
 
-void myProc() {
+void func() {
 int b =;
 
 }
 
-void myProc() {
+void func() {
 int =5;
 
 }
 
-void myProc() {
+void func() {
 float a=1.0,b=2.4,c=6.3;
 {
 a=a+b;
 
 }// falta }
 
-void myProc() {
+void func() {
 
 float a=1.0,b=2.4,c=6.3;
 a=a+b;
@@ -101,7 +101,7 @@ a=a+b;
 }// falta {
 
 
-void myProc() {
+void func() {
 {
 float a=1.0,b=2.4,c=6.3;
 a=a+b;
@@ -109,72 +109,72 @@ a=a+b;
 }// falta {
 
 
-void myProc() {
+void func() {
 int i = 0;
 while i<10)
 i=i+1;
 }// falta ( despues del while
 
-void myProc() {
+void func() {
 int i = 0;
 while(i<10
 i=i+1;
 }// falta )
 
 
-void myProc() {
+void func() {
 int i = 0;
 while(i<10
 i=i+1;
 }// falta ) sin cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 while(1<10{
 i=i+1;
 }
 }// falta ) sin cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
 }// falta ) con cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 while(i<10{
 i=i+1;
 }
 }// falta ) con cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
 }// falta ) con cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 while i<10){
 i=i+1;
 }
 }// falta ) con cuerpo el while
 
-void myProc() {
+void func() {
 int i = 0;
 if i<10) a=b;
 }// falta (
 
-void myProc() {
+void func() {
 int i = 0;
 if (i<10 a=b;
 }// falta )
 
 
-void myProc() {
+void func() {
 int i = 0;
 if i<10){
 a=b;
@@ -182,17 +182,20 @@ a=b;
 }// falta (
 
 
-void myProc() {
+void func() {
 int i = 0;
 if i<10){
 a=b;
 }
 }// falta (
 
-void myProc() {
+void func() {
 int i = 0;
 if i<10){
 a=b;
 }
 }// falta (
 
+void main (){
+while(1<2) if ()
+}

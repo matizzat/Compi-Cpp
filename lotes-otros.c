@@ -76,15 +76,15 @@ int main (int a[], float & b) {
 }
 
 int main (int a[], float & b) {
-yayo=9|| 0
+y=9|| 0
 }
 
 int main (int a[], float & b) {
-yayo=(9|| 0 && 6;
+y=(9|| 0 && 6;
 }
 
 int main (int a[], float & b) {
-!vane
+!what
 }
 
 /***Proposicion Seleccion***/

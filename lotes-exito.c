@@ -16,23 +16,23 @@ int indexes[3] = {5,7};
 
 int indexes[3] = {5,7,321};
 
-void myProcedure(){}
+void func(){}
 
-char myFunc(){}
+char func(){}
 
-float myFunction(int a){}
+float function(int a){}
 
-float myFunction(int a, int b){}
+float function(int a, int b){}
 
-void myProc(char &arr[]){}
+void func(char &arr[]){}
 
-void myProc(char &arr){}
+void func(char &arr){}
 
-void myProc(char arr[]){}
+void func(char arr[]){}
 
-void myProc(char a, int &indexes[], char b, float &arr, int matrix[]){}
+void func(char a, int &indexes[], char b, float &arr, int matrix[]){}
 
-char myFunc(){
+char func(){
 int a;
 int a = 5;
 float values[];
@@ -45,196 +45,196 @@ int indexes[3] = {5,7,321};
 }
 
 //expresion -> expresion simple ... -> ... termino ... -> factor ... -> 
-void myProc(){
+void func(){
 a;
 }
 
-void myProc(){
+void func(){
 5;
 }
 
-void myProc(){
+void func(){
 !val;
 }
 
-void myProc(){
+void func(){
 (-b);
 }
 
-void myProc(){
-myFunc();
+void func(){
+func();
 }
 
 
-void myProc(){
+void func(){
 "this is a string";
 }
 
 //expresion -> expresion simple ... -> ... [+|-] termino ... -> factor ....
-void myProc(){
+void func(){
 -a;
 }
 
-void myProc(){
+void func(){
 +5;
 }
 
-void myProc(){
+void func(){
 -!"Str";
 }
 
-void myProc(){
+void func(){
 +(6);
 }
 
-void myProc(){
--myFunc();
+void func(){
+-func();
 }
 
 
-void myProc(){
+void func(){
 +"this is a string";
 }
 
 //expresion -> expresion simple ... -> ... termino (+| - | ||) termino-> factor ....
-void myProc(){
+void func(){
 a+b;
 }
 
-void myProc(){
+void func(){
 5-x;
 }
 
-void myProc(){
-!isLogic(-1,+4) || myFunc();
+void func(){
+!fisLogic(-1,+4) || func();
 }
 
-void myProc(){
+void func(){
 (2.7) - 6;
 }
 
-void myProc(){
-myFunc() + b;
+void func(){
+func() + b;
 }
 
 
-void myProc(){
+void func(){
 "this is a string" + !val;
 }
 
 //expresion -> expresion simple ... -> ... termino (+| - | ||) termino-> factor ....
-void myProc(){
+void func(){
 a+b;
 }
 
-void myProc(){
+void func(){
 5-x;
 }
 
-void myProc(){
-!(!value) || myFunc();
+void func(){
+!(!value) || func();
 }
 
-void myProc(){
+void func(){
 ( (!"str") ) - 6;
 }
 
-void myProc(){
-myFunc() + b;
+void func(){
+func() + b;
 }
 
 
-void myProc(){
+void func(){
 "this is a string" + !val;
 }
 
 //expresion -> expresion simple ... -> ... termino -> factor (* | / | &&) factor
-void myProc(){
-a*myNumber(a,b);
+void func(){
+a*fmyNumber(a,b);
 }
 
-void myProc(){
-5/-x;
+void func(){
+5/x;
 }
 
-void myProc(){
+void func(){
 !a && g;
 }
 
-void myProc(){
+void func(){
 (6/5) * 6;
 }
 
-void myProc(){
-myFunc() && b;
+void func(){
+func() && b;
 }
 
 
-void myProc(){
+void func(){
 "this is a string" / !val;
 }
 
 //expresion -> expresion simple ... -> [+/-] termino (+| - | ||) termino-> factor (* | / | &&) factor
-void myProc(){
--a*5+myNumber(a,b);
+void func(){
+-a*5+fmyNumber(a,b);
 }
 
-void myProc(){
+void func(){
 +5/!a - x&&!"constant string";
 }
 
-void myProc(){
--!a*(5+b) || aFunction(b*2, myProc());
+void func(){
+-!a*(5+b) || faFunction(b*2, func());
 }
 
-void myProc(){
+void func(){
 +(!b)/b-"as"&&"k";
 }
 
-void myProc(){
-myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware());
+void func(){
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware());
 }
 
 
-void myProc(){
+void func(){
 "this is a string"*4 - a/!(a-b);
 }
 
 //expresion -> expresion simple {= expresion simple | <relacion> expresion simple}
-void myProc(){
--a*5+myNumber(a,b) = -a;
+void func(){
+-a*5+fmyNumber(a,b) = -a;
 }
 
-void myProc(){
-+5/!a - x&&!"constant string" = myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware());
+void func(){
++5/!a - x&&!"constant string" = func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware());
 }
 
-void myProc(){
--!a*(5+b) || aFunction(b*2, myProc())  == 7;
+void func(){
+-!a*(5+b) || faFunction(b*2, func())  == 7;
 }
 
-void myProc(){
+void func(){
 +(!b)/b-"as"&&"k" <= 3421.5648;
 }
 
-void myProc(){
-myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware()) != parabolicNumber(x,y,z);
+void func(){
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 }
 
 
-void myProc(){
+void func(){
 
 b = b*8+factorial(4);
 
 }
 
 //proposicion compuesta -> { [lista de declaracion] [lista de proposiciones] }
-void myProc(){
+void func(){
 int a;
 int a = 5;
 float val[];
 float values[3];
-myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware()) != parabolicNumber(x,y,z);
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
 int index[2] = {};
@@ -244,12 +244,12 @@ int indexes[3] = {5,7,321};
 b = b*8+factorial(4);
 }
 
-void myProc(){
+void func(){
 int a;
 int a = 5;
 float val[];
 float values[3];
-myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware()) != parabolicNumber(x,y,z);
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 float values[] = {2.5, 3.1, 7.8};
 int index[2] = {};
@@ -260,23 +260,23 @@ b = b*8+factorial(4);
 }
 
 
-void myProc(){
+void func(){
 int a = 5;
 int b = 2;
 int c;
 
 c=a+b;
 
-iDoACallHere(c, -a);
+fiDoACallHere(c, -a);
 
 {
 int a = b;
 b = c+4;
-myProc(2*a,3*b);
+func(2*a,3*b);
 }
 }
 
-float myFunc(){
+float func(){
 
 int a = 5;
 int b = 2;
@@ -284,19 +284,19 @@ int c;
 
 c=a+b;
 
-float z = iDoACallHere(c, -a);
+float z = fiDoACallHere(c, -a);
 
 {
 int a = b;
 b = c+4;
 
-myProc(2*a,3*b);
+func(2*a,3*b);
 }
 
 return z;
 }
 
-float myFunc(){
+float func(){
 
 int a = 5;
 int b = 2;
@@ -304,76 +304,76 @@ int c;
 
 c=a+b;
 
-iDoACallHere(c, -a);
+fiDoACallHere(c, -a);
 
 {
 int a = b;
 b = c+4;
 
-myProc(2*a,3*b);
+func(2*a,3*b);
 }
 
 return c;
 }
 
-void myProc() {
+void func() {
 int i = 0;
 
 while(i<10){
-executeMyProc();
+fexecutefunc();
 i = i+1;
 }
 }
 
-void myProc() {
+void func() {
 int i = 0;
 
-while(i<10) executeMyProc(i);
+while(i<10) fexecutefunc(i);
 
 return c;
 }
 
-void myProc() {
+void func() {
 int a = 6, b = 7;
 if(a<b) return 1;
 }
 
-void myProc() {
+void func() {
 int a = 6, b = 7;
 if(a<b) return 1 else 0;
 }
 
-void myProc() {
+void func() {
 int a = 6, b = 7;
 if(a<b){
-a = !isLogic(-1,+4) || myFunc();
+a = !fisLogic(-1,+4) || func();
 }
 }
 
-void myProc() {
+void func() {
 int a = 6, b = 7;
 if(a>=b){
-b = !isLogic(-1,+4) || myFunc();
+b = !fisLogic(-1,+4) || func();
 return b;
 }
 else return a;
 }
 
-void myProc() {
+void func() {
 int a = 6, b = 7;
 if(a>=b){
-b = !isLogic(-1,+4) || myFunc();
+b = !fisLogic(-1,+4) || func();
 return b;
 }
 else{
-myFunc()&&another(6, 2.8, b) || (fibo(7)/!isAMalware()) != parabolicNumber(x,y,z);
+func()&&fanother(6, 2.8, b) || (fibo(7)/!fisAMalware()) != fparabolicNumber(x,y,z);
 float v[] = {2.5};
 b = b*8+factorial(4);
 return a;
 }
 }
 
-int myFunc(){
+int func(){
 
 int a = 5;
 int b = 2;
@@ -386,7 +386,7 @@ cin >> a >> b >> c;
 return c;
 }
 
-int myFunc(){
+int func(){
 cout << 5 << 8+factorial(4);
 }
 
