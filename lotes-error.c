@@ -63,136 +63,136 @@ void my_proc(int &a, int b], float c){}; // se espera [
 void my_proc(int &a[, float b, float c]){}; // se espera [ y ver como se recupera para el 3er param
 
 float myFunc() {
-	int ;
-	int b = 8;
+int ;
+int b = 8;
 }// se espera ident
 
 void myProc() {
-	;int b = 8;
+;int b = 8;
 }// se espera tipo ?
 
 
 void myProc() {
-	b;
+b;
 }// aca no sabe si quiero probar declaracion sin tipo o es una expresion simple. No salta error sintactico aca
 
 void myProc() {
-	int b =;
-	
+int b =;
+
 }
 
 void myProc() {
-	int =5;
-	
+int =5;
+
 }
 
 void myProc() {
-	float a=1.0,b=2.4,c=6.3;
-	{
-		a=a+b;
-		
+float a=1.0,b=2.4,c=6.3;
+{
+a=a+b;
+
 }// falta }
 
 void myProc() {
 
-		float a=1.0,b=2.4,c=6.3;
-		a=a+b;
-	}
+float a=1.0,b=2.4,c=6.3;
+a=a+b;
+}
 }// falta {
 
 
 void myProc() {
-	{
-		float a=1.0,b=2.4,c=6.3;
-		a=a+b;
-	}
+{
+float a=1.0,b=2.4,c=6.3;
+a=a+b;
+}
 }// falta {
 
 
 void myProc() {
-	int i = 0;
-	while i<10)
-		i=i+1;
+int i = 0;
+while i<10)
+i=i+1;
 }// falta ( despues del while
 
 void myProc() {
-	int i = 0;
-	while(i<10
-		i=i+1;
+int i = 0;
+while(i<10
+i=i+1;
 }// falta )
 
 
 void myProc() {
-	int i = 0;
-	while(i<10
-		i=i+1;
+int i = 0;
+while(i<10
+i=i+1;
 }// falta ) sin cuerpo el while
 
 void myProc() {
-	int i = 0;
-	while(1<10{
-		i=i+1;
-	}
+int i = 0;
+while(1<10{
+i=i+1;
+}
 }// falta ) sin cuerpo el while
 
 void myProc() {
-	int i = 0;
-	while i<10){
-		i=i+1;
-	}
+int i = 0;
+while i<10){
+i=i+1;
+}
 }// falta ) con cuerpo el while
 
 void myProc() {
-	int i = 0;
-	while(i<10{
-		i=i+1;
-	}
+int i = 0;
+while(i<10{
+i=i+1;
+}
 }// falta ) con cuerpo el while
 
 void myProc() {
-	int i = 0;
-	while i<10){
-		i=i+1;
-	}
+int i = 0;
+while i<10){
+i=i+1;
+}
 }// falta ) con cuerpo el while
 
 void myProc() {
-	int i = 0;
-	while i<10){
-		i=i+1;
-	}
+int i = 0;
+while i<10){
+i=i+1;
+}
 }// falta ) con cuerpo el while
 
 void myProc() {
-	int i = 0;
-	if i<10) a=b;
+int i = 0;
+if i<10) a=b;
 }// falta (
 
 void myProc() {
-	int i = 0;
-	if (i<10 a=b;
+int i = 0;
+if (i<10 a=b;
 }// falta )
 
 
 void myProc() {
-	int i = 0;
-	if i<10){
-		a=b;
-	}
+int i = 0;
+if i<10){
+a=b;
+}
 }// falta (
 
 
 void myProc() {
-	int i = 0;
-	if i<10){
-		a=b;
-	}
+int i = 0;
+if i<10){
+a=b;
+}
 }// falta (
 
 void myProc() {
-	int i = 0;
-	if i<10){
-		a=b;
-	}
+int i = 0;
+if i<10){
+a=b;
+}
 }// falta (
 
