@@ -10,7 +10,7 @@ float values[] = {2.5};
 
 float values[] = {2.5, 3.1, 7.8};
 
-int indexes[2] = {};
+int indexes[2] = {8};
 
 int indexes[3] = {5,7};
 
