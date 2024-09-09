@@ -198,6 +198,6 @@ a=b;
 // falta (
 
 void fmain (){
-	int a = 0;
-	while(1<2 if (!a)a=1;
+int a = 0;
+while(1<2 if (!a)a=1;
 }
