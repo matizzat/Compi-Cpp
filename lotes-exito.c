@@ -297,7 +297,7 @@ c=a+b;
 fiDoACallHere(c, -a);
 
 {
-int a = b;
+int a = 5;
 b = c+4;
 
 func(2*a,3*b);

@@ -79,6 +79,17 @@ void error_print(int ne)
 		case 67: printf("\t Error %d: Simbolo inesperado o falta simb. en lista de inicializadores\n", ne); break;
 		case 68: printf("\t Error %d: Simbolo inesperado despues de proposicion\n", ne); break;
 		case 69: printf("\t Error %d: Simbolo inesperado o falta simb. despues de expresion simple\n", ne); break;
+
+		case 70: printf("\t Error %d: Se espera un especificador de tipo en lista de declaraciones\n", ne); break;
+		case 71: printf("\t Error %d: Se espera una proposicion en lista de proposiciones\n", ne); break;
+		case 72: printf("\t Error %d: Se espera lista de variables o lista de variables inicializadas\n", ne); break;
+		case 73: printf("\t Error %d: Se espera una constante o una lista de constantes separadas por \",\"\n", ne); break;
+		case 74: printf("\t Error %d: Se espera \">>\" en proposicion de entrada / salida\n", ne); break;
+		case 75: printf("\t Error %d: Se espera \"<<\" en proposicion de entrada / salida", ne); break;
+		case 76: printf("\t Error %d: Se espera una asignacion o un operador relacional en la expresion", ne); break;
+		case 77: printf("\t Error %d: Se espera otro termino en esta expresion simple", ne); break;
+		case 78: printf("\t Error %d: Se espera otro factor en este termino", ne); break;
+		case 79: printf("\t Error %d: Se espera una expresion o una lista de expresiones separadas por \",\" .", ne); break;
 	}
 }
 
