@@ -194,5 +194,44 @@ a=b;
 
 void fmain (){
 int a = 0;
-while(1<2 if (!a)a=1;
+while(1<2 if (!a) a=1;
 }
+
+void fmain (){
+    int a = 0;
+    while 1<2) 
+        if (!a) a=1;
+}
+
+void fmain (){
+    int a = 0;
+    while (1<2) {
+
+    }
+    else
+    {
+        return 1;
+    } 
+}
+
+void fmain (){
+    cin >> ;
+
+    a = 2*a;
+    cin >> a >> ;
+}
+
+void fmain (){
+    cout << a;
+
+    a = 2*a;
+    cout << << b;
+}
+
+void fmain (){
+    cout << a;
+
+    a = 2*a;
+    cout << << b;
+}
+
