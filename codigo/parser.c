@@ -5,6 +5,8 @@
 #define First_lista_declaraciones CVOID | CCHAR | CINT | CFLOAT
 #define First_lista_proposiciones CMAS | CMENOS | CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR | CPYCOMA | CLLA_ABR | CWHILE | CIF | CRETURN | CIN | COUT
 #define First_proposicion 	CMAS | CMENOS | CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR | CPYCOMA | CLLA_ABR | CWHILE | CIF | CRETURN | CIN | COUT
+#define First_expresion_simple  CMAS | CMENOS | CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR
+#define First_factor 		CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR| CNEG | CPAR_ABR | CCONS_STR
 #define First_termino		CIDENT | CCONS_ENT | CCONS_FLO |CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR
 #define First_proposicion_expresion         CMAS | CMENOS | CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR | CPYCOMA
 #define First_expresion         CMAS | CMENOS | CIDENT | CCONS_ENT | CCONS_FLO | CCONS_CAR | CNEG | CPAR_ABR | CCONS_STR
@@ -42,10 +44,10 @@ void test(set c1, set c2, int ne){
 
 void unidad_traduccion(set folset)
 {
-	test(folset | CVOID | CCHAR | CINT | CFLOAT, NADA, 81); // Error 81: Simbolo inesperado en unidad de traducción. Esperaba fin de archivo o 'void', 'char', 'int' o 'float'  
+	test(folset | CVOID | CCHAR | CINT | CFLOAT, NADA, 116); // Error 116: Simbolo inesperado en unidad de traducción. Esperaba fin de archivo o 'void', 'char', 'int' o 'float'  
 	while(lookahead_in(CVOID | CCHAR | CINT | CFLOAT)){
 		declaraciones(folset | CVOID | CCHAR | CINT | CFLOAT);
-		test(folset | CVOID | CCHAR | CINT | CFLOAT, NADA, 81); 
+		test(folset | CVOID | CCHAR | CINT | CFLOAT, NADA, 116); 
 	}
 }
 
@@ -154,13 +156,13 @@ void lista_declaraciones_init(set folset)
 	match(CIDENT, 17); // Error 17: Falta identificador
 
 	declarador_init(folset | CCOMA);
-	test(folset | CCOMA, CIDENT | CCOMA | First_declarador_init, 72); // Error 72: Símbolo inesperado en lista de declaraciones 
+	test(folset | CCOMA, CIDENT | CCOMA | First_declarador_init, 107); // Error 107: Símbolo inesperado en lista de declaraciones 
 	while(lookahead_in(CCOMA | CIDENT | First_declarador_init))
 	{
 		match(CCOMA, 64); // Error 64: Falta , 	
 		match(CIDENT, 17); // Error 17: Falta identificador
 		declarador_init(folset | CCOMA);
-		test(folset | CCOMA, CIDENT | CCOMA | First_declarador_init, 72); 
+		test(folset | CCOMA, CIDENT | CCOMA | First_declarador_init, 107); 
 	}
 }
 
@@ -175,7 +177,7 @@ void declaracion_variable(set folset)
 	}
 
 	match(CPYCOMA, 23); // Error 23: Falta ; 
-	test(folset, NADA, 80); // Error 80: Símbolo inesperado después de declaración de variable 
+	test(folset, NADA, 115); // Error 80: Símbolo inesperado después de declaración de variable 
 }
 
 
@@ -213,12 +215,12 @@ void declarador_init(set folset)
 void lista_inicializadores(set folset)
 {
 	constante(folset | CCOMA);
-	test(folset | CCOMA, First_constante, 73); // Error 73: Símbolo inesperado en lista de inicializadores
+	test(folset | CCOMA, First_constante, 108); // Error 108: Símbolo inesperado en lista de inicializadores
 	while(lookahead_in(CCOMA | First_constante))
 	{
 		match(CCOMA, 23); // Error 23: Falta ;	
 		constante(folset | CCOMA);
-		test(folset | CCOMA, First_constante, 73);
+		test(folset | CCOMA, First_constante, 108);
 	}
 }
 
@@ -242,10 +244,10 @@ void proposicion_compuesta(set folset)
 void lista_declaraciones(set folset)
 {
 	declaracion(folset | First_declaracion); 
-	test(folset | First_declaracion, NADA, 70); // Error 70: Símbolo inesperado en lista de declaraciones 
+	test(folset | First_declaracion, NADA, 105); // Error 105: Símbolo inesperado en lista de declaraciones 
 	while(lookahead_in(CVOID | CCHAR | CINT | CFLOAT)){
 		declaracion(folset | First_declaracion);	
-		test(folset | First_declaracion, NADA, 70); 
+		test(folset | First_declaracion, NADA, 105); 
 	}
 }
 
@@ -262,10 +264,10 @@ void declaracion(set folset)
 void lista_proposiciones(set folset)
 {
 	proposicion(folset | First_proposicion);
-	test(folset | First_proposicion, NADA, 71); // Error 71: Símbolo inesperado en lista de proposiciones 
+	test(folset | First_proposicion, NADA, 106); // Error 106: Símbolo inesperado en lista de proposiciones 
 	while(lookahead_in(First_proposicion)){
 		proposicion(folset | First_proposicion);
-		test(folset | First_proposicion, NADA, 71); 
+		test(folset | First_proposicion, NADA, 106); 
 	}
 }
 
@@ -355,12 +357,12 @@ void proposicion_e_s(set folset)
 			match(CSHR, 30); // Error 30: Falta >>
 			
 			variable(folset | CSHR | CPYCOMA);
-			test(folset | CSHR | CPYCOMA, First_variable, 74);	// Error 74: Símbolo inesperado en proposición de entrada 
+			test(folset | CSHR | CPYCOMA, First_variable, 109);	// Error 109: Símbolo inesperado en proposición de entrada 
 			while(lookahead_in(CSHR | First_variable))
 			{
 				match(CSHR, 30);
 				variable(folset | CSHR | CPYCOMA);
-				test(folset | CSHR | CPYCOMA, First_variable, 74);	// Error 74: se espera >> en proposicion de entrada / salida
+				test(folset | CSHR | CPYCOMA, First_variable, 109);	
 			}
 
 			match(CPYCOMA, 23); // Error 23: Falta ;
@@ -373,12 +375,12 @@ void proposicion_e_s(set folset)
 			match(CSHL, 31); // Error 31: Falta << 
 			
 			expresion(folset | CSHL | CPYCOMA);
-			test(folset | CSHL | CPYCOMA, First_expresion, 75); // Error 75: Símbolo inesperado en proposición de salida 
+			test(folset | CSHL | CPYCOMA, First_expresion, 110); // Error 110: Símbolo inesperado en proposición de salida 
 			while(lookahead_in(CSHL | First_expresion))
 			{
 				match(CSHL, 31); 
 				expresion(folset | CSHL | CPYCOMA);
-				test(folset | CSHL | CPYCOMA, First_expresion, 75); 
+				test(folset | CSHL | CPYCOMA, First_expresion, 110); 
 			}
 
 			match(CPYCOMA, 23); // Error 23: Falta ; 
@@ -412,16 +414,12 @@ void proposicion_expresion(set folset)
 void expresion(set folset)
 {	
 	expresion_simple(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG);
-	test(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG, NADA, 76); //Error 76: Símbolo inesperado en expresion. Quizás quizo escribir '=' '!=' '==' '<' '<=' '>' o '>=' 
-	while(lookahead_in(CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG)) // En la gramática BNFE se invoca a <relación>
+	test(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG, First_expresion_simple, 111); //Error 111: Símbolo inesperado en expresion. Quizás quizo escribir '=' '!=' '==' '<' '<=' '>' o '>=' 
+	while(lookahead_in(CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG | First_expresion_simple)) // En la gramática BNFE se invoca a <relación>
 	{
 		switch(lookahead())
 		{
 			case CASIGNAC:
-				scanner();
-				expresion_simple(folset);
-				break;
-				
 			case CDISTINTO:
 			case CIGUAL:
 			case CMENOR:
@@ -429,10 +427,13 @@ void expresion(set folset)
 			case CMAYOR:
 			case CMAIG:
 				scanner();
-				expresion_simple(folset);
 				break;
+			default:
+				error_handler(65);
+
 		}
-		test(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG, NADA, 76); 
+		expresion_simple(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG);
+		test(folset | CASIGNAC | CDISTINTO | CIGUAL | CMENOR | CMEIG | CMAYOR | CMAIG, First_expresion_simple, 111); 
 	}
 }
 
@@ -443,30 +444,46 @@ void expresion_simple(set folset)
 		scanner();
 
 	termino(folset | CMAS | CMENOS | COR);
-	test(folset | CMAS | CMENOS | COR, NADA, 77); // Error 77: Símbolo inesperado en expresion simple. Quizas quizo escribir '+' '-' o '|'  
-	while(lookahead_in(CMAS | CMENOS | COR))
+	test(folset | CMAS | CMENOS | COR, First_termino, 112); // Error 112: Símbolo inesperado en expresion simple. Quizas quizo escribir '+' '-' o '|'  
+	while(lookahead_in(CMAS | CMENOS | COR | First_termino))
 	{
-		scanner();
+		switch(lookahead()){
+			case CMAS:
+			case CMENOS:
+			case COR:
+				scanner();
+				break;
+			default:
+				error_handler(65);
+		}	
 		termino(folset | CMAS | CMENOS| COR);
-	       	test(folset | CMAS | CMENOS | COR, NADA, 77); 
+	       	test(folset | CMAS | CMENOS | COR, First_termino, 112); 
 	}
 }
 
 void termino(set folset)
 {	
-	factor(folset | CMULT | CDIV| CAND);
-	test(folset | CMULT | CDIV | CAND, NADA, 78); // Error 78: Símbolo inesperado en termino. Quizás quizo escribir '*' '/' o '&&' 
-	while(lookahead_in(CMULT | CDIV | CAND))
+	factor(folset | CMULT | CDIV | CAND);
+	test(folset | CMULT | CDIV | CAND, First_factor, 113); // Error 113: Símbolo inesperado en termino. Quizás quizo escribir '*' '/' o '&&' 
+	while(lookahead_in(CMULT | CDIV | CAND | First_factor))
 	{
-		scanner();
+		switch(lookahead()){
+			case CMULT:
+			case CDIV:
+			case CAND:
+				scanner();
+				break;
+			default:
+				error_handler(65); 
+		}	
 		factor(folset | CMULT | CDIV | CAND);
-		test(folset | CMULT | CDIV | CAND, NADA, 78);
+		test(folset | CMULT | CDIV | CAND, First_factor, 113);
 	}
 }
 
 void factor(set folset)
 {
-	test(CIDENT | First_constante | CCONS_STR | CPAR_ABR | CNEG, folset | CPAR_CIE, 57); // Error 57: Simbolo inesperado o falta simb. al comienzo de factor
+	test(CIDENT | First_constante | CCONS_STR | CPAR_ABR | CNEG, folset, 57); // Error 57: Simbolo inesperado o falta simb. al comienzo de factor
 	switch(lookahead())
 	{
 		case CIDENT:
@@ -491,8 +508,7 @@ void factor(set folset)
 			break;
 		
 		case CPAR_ABR:
-		case CPAR_CIE:
-			scanner();
+			scanner();	
 			expresion(folset | CPAR_CIE);
 			match(CPAR_CIE, 21); // Error 21: Falta )
 			break;
@@ -544,12 +560,12 @@ void llamada_funcion(set folset)
 void lista_expresiones(set folset)
 {
 	expresion(folset | CCOMA);
-	test(folset | CCOMA, First_expresion, 79);// Error 79: Símbolo inesperado en lista de expresiones. Quizás quizo escribir ','
+	test(folset | CCOMA, First_expresion, 114);// Error 114: Símbolo inesperado en lista de expresiones. Quizás quizo escribir ','
 	while(lookahead_in(CCOMA | First_expresion))
 	{
 		match(CCOMA, 64); // Error 64: Falta ,
 		expresion(folset | CCOMA);
-		test(folset | CCOMA, First_expresion, 79);
+		test(folset | CCOMA, First_expresion, 114);
 	}
 }
 

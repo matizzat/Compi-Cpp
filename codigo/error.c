@@ -80,18 +80,18 @@ void error_print(int ne)
 		case 68: printf("\t Error %d: Simbolo inesperado despues de proposicion\n", ne); break;
 		case 69: printf("\t Error %d: Simbolo inesperado o falta simb. despues de expresion simple\n", ne); break;
 
-		case 70: printf("\t Error %d: Símbolo inesperado en lista de declaraciones\n", ne); break;
-		case 71: printf("\t Error %d: Símbolo inesperado en lista de proposiciones\n", ne); break;
-		case 72: printf("\t Error %d: Símbolo inesperado en lista de declaraciones\n", ne); break;
-		case 73: printf("\t Error %d: Símbolo inesperado en lista de inicializadores\n", ne); break;
-		case 74: printf("\t Error %d: Símbolo inesperado en proposición de entrada\n", ne); break;
-		case 75: printf("\t Error %d: Símbolo inesperado en proposición de salida\n", ne); break;
-		case 76: printf("\t Error %d: Símbolo inesperado en expresión. Quizas quizo escribir '=' '!=' '==' '<' '<=' '>' o '>='\n", ne); break;
-		case 77: printf("\t Error %d: Símbolo inesperado en expresion simple. Quizás quizo escribir '+' '-' o '||'\n", ne); break;
-		case 78: printf("\t Error %d: Símbolo inesperado en termino. Quizás quizo escribir '*' '/' o '&&'\n", ne); break;
-		case 79: printf("\t Error %d: Símbolo inesperado en lista de expresiones. Quizás quizo escribir ','\n", ne); break;
-		case 80: printf("\t Error %d: Símbolo inesperado después de declaración de variable\n", ne); break; 
-		case 81: printf("\t Error %d: Símbolo inesperado en unidad de traducción. Esperaba fin de archivo o 'void', 'char', 'int' o 'float'\n", ne); break; 
+		case 105: printf("\t Error %d: Simbolo inesperado en lista de declaraciones\n", ne); break;
+		case 106: printf("\t Error %d: Simbolo inesperado en lista de proposiciones\n", ne); break;
+		case 107: printf("\t Error %d: Simbolo inesperado en lista de declaraciones\n", ne); break;
+		case 108: printf("\t Error %d: Simbolo inesperado en lista de inicializadores\n", ne); break;
+		case 109: printf("\t Error %d: Simbolo inesperado en proposicion de entrada\n", ne); break;
+		case 110: printf("\t Error %d: Simbolo inesperado en proposicion de salida\n", ne); break;
+		case 111: printf("\t Error %d: Simbolo inesperado en expresion. Quizas quizo escribir '=' '!=' '==' '<' '<=' '>' o '>='\n", ne); break;
+		case 112: printf("\t Error %d: Simbolo inesperado en expresion simple. Quizas quizo escribir '+' '-' o '||'\n", ne); break;
+		case 113: printf("\t Error %d: Simbolo inesperado en termino. Quizas quizo escribir '*' '/' o '&&'\n", ne); break;
+		case 114: printf("\t Error %d: Simbolo inesperado en lista de expresiones. Quizas quizo escribir ','\n", ne); break;
+		case 115: printf("\t Error %d: Simbolo inesperado despues de declaracion de variable\n", ne); break; 
+		case 116: printf("\t Error %d: Simbolo inesperado en unidad de traduccion. Esperaba fin de archivo o 'void', 'char', 'int' o 'float'\n", ne); break; 
 	}
 }
 
