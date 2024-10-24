@@ -9,3 +9,5 @@ void init_parser(int, char **);
 void match(set, int);
 set lookahead();
 set lookahead_in(set);
+
+int max(int, int); 

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 #include <string.h>
 #include "util.h"
 #include "codigos.h"
@@ -15,6 +16,7 @@ void scanner()
 		sbol->codigo = CEOF;
 	/* yylex retorna 0 si llego a fin de archivo */
 
+	/* Concatena nuevo lexema a linea actual */ 
 	liberar = linea;
 	linea = (char *) malloc (strlen(linea) + strlen (token1.lexema) + 3);
 	strcpy(linea, liberar);
@@ -78,4 +80,10 @@ set lookahead()
 set lookahead_in(set conjunto)
 {
 	return lookahead() & conjunto;
+}
+
+int max(int a, int b){
+	if(a > b)
+		return a;
+	else return b; 
 }

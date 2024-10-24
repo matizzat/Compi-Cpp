@@ -79,6 +79,44 @@ void error_print(int ne)
 		case 67: printf("\t Error %d: Simbolo inesperado o falta simb. en lista de inicializadores\n", ne); break;
 		case 68: printf("\t Error %d: Simbolo inesperado despues de proposicion\n", ne); break;
 		case 69: printf("\t Error %d: Simbolo inesperado o falta simb. despues de expresion simple\n", ne); break;
+		
+		/* errores de semantica */
+		case 71: printf("\t Error %d: Identificador no declarado\n", ne); break;																								
+		case 72: printf("\t Error %d: Identificador ya declarado\n", ne); break;																								
+		case 73: printf("\t Error %d: Una variable, un parametro o un arreglo no pueden ser de tipo void\n", ne); break;											
+		case 74: printf("\t Error %d: La cdad. de elementos de un arreglo debe ser una cte. entera en la declaracion\n", ne); break;							
+		case 75: printf("\t Error %d: La cantidad de elementos de un arreglo debe ser mayor a 0\n", ne); break;														
+		case 76: printf("\t Error %d: La cantidad de valores inicializadores debe ser igual o menor al tamaño del arreglo declarado\n", ne); break;		
+		case 77: printf("\t Error %d: El tipo de los valores inicializadores del arreglo debe coincidir con su declaracion\n", ne); break;					
+		case 78: printf("\t Error %d: La variable no es de tipo arreglo\n", ne); break;																						
+		case 79: printf("\t Error %d: En una expresion los arreglos deben ser accedidos por sus elementos\n", ne); break;											
+		case 80: printf("\t Error %d: Los indices validos del arreglo son entre 0 y tamaño-1\n", ne); break;															
+		case 81: printf("\t Error %d: No se permite la asignacion de arreglos como un todo\n", ne); break;																
+		case 82: printf("\t Error %d: En el lado izquierdo de una asignacion debe haber una variable\n", ne); break;												
+		case 83: printf("\t Error %d: Los tipos de ambos lados de la asignacion deben ser estructuralmente equivalentes\n", ne); break;
+		case 84: printf("\t Error %d: Falta declarar la funcion main()\n", ne); break;																						
+		case 85: printf("\t Error %d: El tipo de la funcion main() debe ser void\n", ne); break;																			
+		case 86: printf("\t Error %d: La funcion main() no lleva argumento\n", ne); break;																					
+		case 87: printf("\t Error %d: El tipo del valor de retorno no coincide con el tipo de la funcion\n", ne); break;											
+		case 88: printf("\t Error %d: Falta return\n", ne); break;																													
+		case 89: printf("\t Error %d: Un procedimiento no lleva una sentencia de retorno\n", ne); break;																
+		case 90: printf("\t Error %d: La CANTIDAD de parametros actuales no coincide con la cantidad de parametros formales\n", ne); break;					
+		case 91: printf("\t Error %d: El TIPO de los parametros actuales no coincide con el de los parametros formales\n", ne); break;						
+		case 92: printf("\t Error %d: No se permite <tipo> & <id_arreglo> [] en la definicion de un parametro\n", ne); break;									
+		case 93: printf("\t Error %d: Si el pasaje es por REFERENCIA, el parametro real debe ser una variable\n", ne); break;									
+		case 94: printf("\t Error %d: La constante string solo puede aparecer en las proposiciones de E/S\n", ne); break;											
+		case 95: printf("\t Error %d: Las proposiciones de E/S solo aceptan variables y/o expresiones de tipo char, int y float\n", ne); break;			
+		case 96: printf("\t Error %d: Los operandos de los operadores logicos o relacionales solo pueden ser de tipo char, int o float\n", ne); break;	
+		case 97: printf("\t Error %d: Las condiciones de las prop. de seleccion e iteracion solo pueden ser de tipo char, int y float\n", ne); break;	
+		case 98: printf("\t Error %d: Si el parametro formal es un arreglo, en el parametro real solo debe haber un identificador\n", ne); break;		
+		case 99: printf("\t Error %d: El identificador debe ser una funcion o un procedimiento\n", ne); break;														
+		case 100:printf("\t Error %d: El identificador debe ser una variable o parametro\n", ne); break;
+
+		case 101: printf("\t Error %d: Solo se pueden realizar coersiones a tipos más grandes\n", ne); break; 
+		case 102: printf("\t Error %d: Variable del lado izquierdo de asignacion no es de tipo char, int o float\n", ne); break; 
+
+		case 103: printf("\t Error %d: Los operandos de los operadores logicos o aritmeticos solo pueden ser de tipo char, int o float\n", ne); break; 
+		case 104: printf("\t Error %d: Los operandos de los operadores logicos o aritmeticos deben ser del mismo tipo\n", ne); break; 
 
 		case 105: printf("\t Error %d: Simbolo inesperado en lista de declaraciones\n", ne); break;
 		case 106: printf("\t Error %d: Simbolo inesperado en lista de proposiciones\n", ne); break;
@@ -92,6 +130,10 @@ void error_print(int ne)
 		case 114: printf("\t Error %d: Simbolo inesperado en lista de expresiones. Quizas quizo escribir ','\n", ne); break;
 		case 115: printf("\t Error %d: Simbolo inesperado despues de declaracion de variable\n", ne); break; 
 		case 116: printf("\t Error %d: Simbolo inesperado en unidad de traduccion. Esperaba fin de archivo o 'void', 'char', 'int' o 'float'\n", ne); break; 
+
+		// Más errores semánticos
+		case 117: printf("\t Error %d: Expresion del lado derecho de asignacion no es de tipo char, int o float\n", ne); break; 
+	  
 	}
 }
 
@@ -101,17 +143,22 @@ void error_handler(int ne)
 int i;
 hubo_error++;
 if(last_call){
-	if(hubo_error==1) printf("Linea %d - %s\n", nro_linea, linea);
-	else {
-	if(strlen(linea)==2) error_print(errores_x_linea[i]);
-	for(i = 0; i < cant_errores_x_linea; i++)
-		error_print(errores_x_linea[i]); 
-	cant_errores_x_linea = 0;}
+	if(hubo_error==1) 
+		printf("Linea %d - %s\n", nro_linea, linea);
+	else{
+		if(strlen(linea)==2) 
+			error_print(errores_x_linea[i]);
+
+		for(i = 0; i < cant_errores_x_linea; i++)
+			error_print(errores_x_linea[i]); 
+		cant_errores_x_linea = 0;
+	}
 }
 else{
 	if(ne == COD_IMP_ERRORES)
 	{
 		printf("Linea %d - %s\n", nro_linea, linea);
+
 		for(i = 0; i < cant_errores_x_linea; i++)
 			error_print(errores_x_linea[i]);
 		cant_errores_x_linea = 0;
